@@ -4,6 +4,20 @@ import styles from './index.module.scss';
 import ReleaseCard from 'components/release-card/release-card';
 import { data } from 'test_data';
 
+// export async function getStaticProps(context) {
+//    fetch('http://localhost:3000/')
+//     .then(response => response.json().then((data) => {
+//       console.log(data)
+//     }))
+//     .then(data => console.log(data));
+
+//   fetch("")
+//   console.log(process.env.DISCOGS_CONSUMER_KEY);
+//   return {
+//     props: {}, // will be passed to the page component as props
+//   }
+// }
+
 export default function Home() {
   return (
     <div className={styles.layout}>
