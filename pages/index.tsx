@@ -2,22 +2,8 @@
 import Collection from 'components/collection/collection';
 import styles from './index.module.scss';
 import ReleaseCard from 'components/release-card/release-card';
-import { data } from 'test_data';
 import { useEffect, useState } from 'react';
 
-// export async function getStaticProps(context) {
-//    fetch('http://localhost:3000/')
-//     .then(response => response.json().then((data) => {
-//       console.log(data)
-//     }))
-//     .then(data => console.log(data));
-
-//   fetch("")
-//   console.log(process.env.DISCOGS_CONSUMER_KEY);
-//   return {
-//     props: {}, // will be passed to the page component as props
-//   }
-// }
 
 export default function Home() {
   const [ searchString, setSearchString ] = useState<string>("nirvana");
@@ -51,13 +37,9 @@ export default function Home() {
         <div className={styles.gridView}>
 
           <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
-
-          {
-            results.map(item => 
-              <ReleaseCard key={item.id} release={item}/>
-            )
-          }
-
+          {results.map(item => 
+            <ReleaseCard key={item.id} release={item}/>
+          )}
         </div>
       </main>
     </div>
