@@ -5,8 +5,8 @@ const DISCOGS_CONSUMER_SECRET = process.env.DISCOGS_CONSUMER_SECRET;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { page, size } = req.query;
-    const response = await fetch(`https://api.discogs.com/database/search?=&key=${DISCOGS_CONSUMER_KEY}&secret=${DISCOGS_CONSUMER_SECRET}&page=${page}&per_page=${size}`);
+    const { page, size, query } = req.query;
+    const response = await fetch(`https://api.discogs.com/database/search?q=${query}&key=${DISCOGS_CONSUMER_KEY}&secret=${DISCOGS_CONSUMER_SECRET}&page=${page}&per_page=${size}`);
     const data = await response.json();
     res.statusCode = 200
     res.json(data.results);
