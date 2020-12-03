@@ -1,5 +1,9 @@
 import { Release } from "models/release.model";
 
+// How to perform a search
+// https://www.discogs.com/developers/#page:database,header:database-search
+ 
+
 export const data: Array<Release> = [
   {
     id: 11334732,

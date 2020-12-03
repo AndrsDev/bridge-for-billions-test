@@ -1,11 +1,27 @@
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  img {
-    width: 100%;
-    margin-bottom: 10px;
-    box-shadow: var(--default-box-shadow);
-  }
+.box {
+	position: relative;
+  width: 100%;
+  padding-top: 100%;
+  box-shadow: var(--default-box-shadow);
+  margin-bottom: 16px;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .title { 
