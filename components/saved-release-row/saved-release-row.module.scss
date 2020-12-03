@@ -27,12 +27,12 @@
 }
 
 .title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   @include one-line-text();
 }
 
 .caption {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: var(--color-text2);
   @include one-line-text();
 }
