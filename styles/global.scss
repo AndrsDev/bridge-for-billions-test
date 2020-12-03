@@ -12,6 +12,7 @@
   --max-width-page-content: 780px;
   --padding-content: 64px;
   --default-border-radius: 8px;
+  --default-box-shadow: 0px 16px 36px -8px rgba(0, 0, 0, 0.4);
 
   --color-text1: #404040;
   --color-text2: #A9A9A9;
@@ -65,6 +66,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input {
+  border: 1px solid #A9A9A9;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: var(--default-border-radius);
+}
+
+input::placeholder {
+  font-size: 1rem;
+}
+
 
 @media only screen and (min-width: 1920px) {
   :root {

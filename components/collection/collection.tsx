@@ -13,13 +13,10 @@ export default function Collection() {
       <h2>Collection</h2>
 
       {
-        data.map((item) => 
-          <>
-            <SavedReleaseRow key={item.id} release={item}/>
-            <div className={styles.spacing}>
-              <Divider />
-            </div>
-          </>
+        data.map((item) =>   
+          <div key={item.id} className={styles.spacing}>
+            <SavedReleaseRow release={item}/>
+          </div>
         )
       }
       {/* <div className>

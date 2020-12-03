@@ -13,26 +13,29 @@
   img {
     height: 48px;
     width: 48px;
+    box-shadow: var(--default-box-shadow);
   }
 }
 
 .details {
   flex: 1;
   width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 22px;
+  margin-right: 28px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
 .title {
-  font-size: 0.8rem;
+  line-height: 1.6;
+  font-size: 1rem;
   @include one-line-text();
 }
 
 .caption {
-  font-size: 0.6rem;
+  line-height: 1.6;
+  font-size: 0.8rem;
   color: var(--color-text2);
   @include one-line-text();
 }
