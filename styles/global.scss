@@ -68,7 +68,8 @@ body {
 }
 
 input {
-  border: 1px solid #A9A9A9;
+  outline: none;
+  border: 1px solid var(--color-text2);
   padding: 10px 20px;
   font-weight: 500;
   font-size: 1rem;
@@ -76,7 +77,12 @@ input {
 }
 
 input::placeholder {
+  color: var(--color-text2);
   font-size: 1rem;
+}
+
+input:focus {
+  border: 1px solid var(--color-text1);
 }
 
 
