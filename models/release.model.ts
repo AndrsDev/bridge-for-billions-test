@@ -1,0 +1,18 @@
+export interface Release {
+  id: number,
+  title: string,
+  artist: string,
+  label?: string,
+  year: number,
+  role: string,
+  type: string,
+  thumb: string,
+  stats: any,
+  resource_url: string,
+  img_url?: string | null,
+  format?: string,
+  status?: string,
+  saved?: boolean,
+  main_release?: number,
+  trackinfo?: string,
+}

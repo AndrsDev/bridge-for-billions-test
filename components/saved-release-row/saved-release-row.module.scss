@@ -1,0 +1,39 @@
+@mixin one-line-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rowContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.details {
+  flex: 1;
+  width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 0.9rem;
+  @include one-line-text();
+}
+
+.caption {
+  font-size: 0.8rem;
+  color: var(--color-text2);
+  @include one-line-text();
+}
+

@@ -1,9 +1,14 @@
-import Head from 'next/head'
+// import Head from 'next/head'
+import Collection from 'components/collection/collection';
+import styles from './index.module.scss';
 
 export default function Home() {
   return (
-    <div>
-      Hello World      
+    <div className={styles.layout}>
+      <Collection />
+      <main>
+        Content
+      </main>
     </div>
   )
 }

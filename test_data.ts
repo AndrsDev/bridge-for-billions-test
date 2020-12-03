@@ -1,4 +1,6 @@
-export const data = [
+import { Release } from "models/release.model";
+
+export const data: Array<Release> = [
   {
     id: 11334732,
     status: "Accepted",
