@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.4;
+}
+
+:root {
+  /* Layout */
+  --max-width-content: 1080px;
+  --max-width-page-content: 780px;
+  --padding-content: 64px;
+  --default-border-radius: 1rem;
+
+  /* Brand colors */
+  --color-accent: #3B3B77;
+  --color-primary: #4E7FDF;
+
+  /* Support colors */
+  --color-success: #00D9BC;
+  --color-error: #F44336;
+  --color-link: #00D9BC;
+  --color-warning: #FBC138;
+
+  /* Shades of grey */
+  --color-white: #FFFFFF;
+  --color-grey100: #F9F9F9;
+  --color-grey200: #E9E9E9;
+  --color-grey300: #B5B5B5;
+  --color-grey400: #7E7E7E;
+  --color-grey500: #464646;
+  --color-grey600: #3E3D3D;
+  --color-grey700: #1E1E1E;
+  --color-black: #000000;
+
+  /* Theme colors */
+  --color-divider: var(--color-grey200);
+  --color-title: var(--color-black);
+  --color-text: var(--color-grey500);
+  --color-background: var(--color-white);
+  --color-container: var(--color-grey100);
+}
+
+[data-theme="dark"] {
+  --color-divider: var(--color-grey700);
+  --color-title: var(--color-white);
+  --color-text: var(--color-grey300);
+  --color-background: var(--color-black);
+  --color-container: var(--color-grey700);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+html {
+  font-size: 12px;
+  background-color: var(--color-background);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (min-width: 1920px) {
+  :root {
+    --max-width-content: 1920px;
+    --padding-content: 128px;
+  }
+
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  :root {
+    --max-width-content: 1200px;
+    --padding-content: 24px;
+  }
+}

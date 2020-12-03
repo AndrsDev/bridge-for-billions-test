@@ -1,0 +1,23 @@
+.blogContent {
+    margin: 0 auto;
+    padding: 4rem var(--padding-content);
+    max-width: var(--max-width-page-content);
+}
+
+.pageContent {
+    margin: 0 auto;
+    padding: 4rem var(--padding-content);
+    max-width: var(--max-width-content);
+}
+
+.spacingBottomMin {
+    margin-bottom: 0.6rem;
+}
+
+.spacingBottom {
+    margin-bottom: 1rem;
+}
+
+.spacingTopLarge {
+    margin-top: 6rem;
+}
