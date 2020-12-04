@@ -15,5 +15,5 @@ export interface Release {
   saved?: boolean,
   main_release?: number,
   trackinfo?: string,
-  cover_image: string,
+  cover_image?: string,
 }
