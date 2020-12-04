@@ -4,7 +4,7 @@ import styles from './modal.module.scss';
 
 interface Props {
   children: ReactNode,
-  onClose?: () => void,
+  onClose: () => void,
 }
 
 function Modal({ onClose, children } : Props) {

@@ -3,16 +3,22 @@ import Collection from 'components/collection/collection';
 import styles from './index.module.scss';
 import ReleaseCard from 'components/release-card/release-card';
 import { useEffect, useRef, useState } from 'react';
-import Modal from 'components/modal/modal';
+import ReleaseDetailsModal from 'components/release-details-modal/release-details-modal';
 
 
 export default function Home() {
+  const [ selectedRelease, setSelectedRelease ] = useState(null);
   const [ searchString, setSearchString ] = useState<string>("");
   const [ results, setResults ] = useState([]);
   const [ page , setPage ] = useState<number>(1);
   const [ element, setElement ] = useState(null);
   const observer = useRef<IntersectionObserver>();
   let typingTimer: NodeJS.Timeout;
+
+  const closeModal = () => {
+    setSelectedRelease(null);
+    console.log('wtf')
+  }
 
   const fetchItems = async (query: string) => {
     const response = await fetch(`http://localhost:3000/api/search?query=${query}&page=${page}&size=12`);
@@ -94,15 +100,15 @@ export default function Home() {
           <div className={styles.gridView}>
             <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
             {results.map((item, index) => 
-              <ReleaseCard key={index} release={item}/>
+              <ReleaseCard key={index} release={item} onClick={() => setSelectedRelease(item)}/>
             )}
           </div>
           <div id="loadMoreItem" ref={setElement}></div>
         </main>
       </div>
-      <Modal>
-        Hello
-      </Modal>
+      { selectedRelease && 
+        <ReleaseDetailsModal release={selectedRelease} onClose={closeModal}/>
+      }
     </>
   )
 }
