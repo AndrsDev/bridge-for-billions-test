@@ -3,15 +3,21 @@ import Collection from 'components/collection/collection';
 import styles from './index.module.scss';
 import ReleaseCard from 'components/release-card/release-card';
 import { useEffect, useRef, useState } from 'react';
+import ReleaseDetailsModal from 'components/release-details-modal/release-details-modal';
 
 
 export default function Home() {
+  const [ selectedRelease, setSelectedRelease ] = useState(null);
   const [ searchString, setSearchString ] = useState<string>("");
   const [ results, setResults ] = useState([]);
   const [ page , setPage ] = useState<number>(1);
   const [ element, setElement ] = useState(null);
   const observer = useRef<IntersectionObserver>();
   let typingTimer: NodeJS.Timeout;
+
+  const closeModal = () => {
+    setSelectedRelease(null);
+  }
 
   const fetchItems = async (query: string) => {
     const response = await fetch(`http://localhost:3000/api/search?query=${query}&page=${page}&size=12`);
@@ -86,17 +92,22 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={styles.layout}>
-      <Collection />
-      <main className={styles.mainContainer}>
-        <div className={styles.gridView}>
-          <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
-          {results.map((item, index) => 
-            <ReleaseCard key={index} release={item}/>
-          )}
-        </div>
-        <div id="loadMoreItem" ref={setElement}></div>
-      </main>
-    </div>
+    <>
+      <div className={styles.layout}>
+        <Collection />
+        <main className={styles.mainContainer}>
+          <div className={styles.gridView}>
+            <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
+            {results.map((item, index) => 
+              <ReleaseCard key={index} release={item} onClick={() => setSelectedRelease(item)}/>
+            )}
+          </div>
+          <div id="loadMoreItem" ref={setElement}></div>
+        </main>
+      </div>
+      { selectedRelease && 
+        <ReleaseDetailsModal release={selectedRelease} onClose={closeModal}/>
+      }
+    </>
   )
 }
