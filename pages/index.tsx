@@ -3,6 +3,7 @@ import Collection from 'components/collection/collection';
 import styles from './index.module.scss';
 import ReleaseCard from 'components/release-card/release-card';
 import { useEffect, useRef, useState } from 'react';
+import Modal from 'components/modal/modal';
 
 
 export default function Home() {
@@ -86,17 +87,22 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={styles.layout}>
-      <Collection />
-      <main className={styles.mainContainer}>
-        <div className={styles.gridView}>
-          <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
-          {results.map((item, index) => 
-            <ReleaseCard key={index} release={item}/>
-          )}
-        </div>
-        <div id="loadMoreItem" ref={setElement}></div>
-      </main>
-    </div>
+    <>
+      <div className={styles.layout}>
+        <Collection />
+        <main className={styles.mainContainer}>
+          <div className={styles.gridView}>
+            <input placeholder="Search by artist , album or both..." onChange={handleSearch} />
+            {results.map((item, index) => 
+              <ReleaseCard key={index} release={item}/>
+            )}
+          </div>
+          <div id="loadMoreItem" ref={setElement}></div>
+        </main>
+      </div>
+      <Modal>
+        Hello
+      </Modal>
+    </>
   )
 }
