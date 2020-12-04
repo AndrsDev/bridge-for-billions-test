@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', system-ui, sans-serif;
+  line-height: 1.4;
+}
+
+:root {
+  /* Layout */
+  --max-width-content: 1080px;
+  --max-width-page-content: 780px;
+  --padding-content: 64px;
+  --default-border-radius: 8px;
+  --default-box-shadow: 0px 16px 36px -8px rgba(0, 0, 0, 0.4);
+
+  --color-text1: #404040;
+  --color-text2: #A9A9A9;
+
+  --color-background1: #FFFFFF;
+  --color-background2: #F6F6F6;
+
+  /* Brand colors */
+  --color-accent: #3B3B77;
+  --color-primary: #4E7FDF;
+
+  /* Support colors */
+  --color-success: #00D9BC;
+  --color-error: #F44336;
+  --color-link: #00D9BC;
+  --color-warning: #FBC138;
+
+  /* Shades of grey */
+  --color-white: #FFFFFF;
+  --color-grey100: #F9F9F9;
+  --color-grey200: #E9E9E9;
+  --color-grey300: #B5B5B5;
+  --color-grey400: #7E7E7E;
+  --color-grey500: #464646;
+  --color-grey600: #3E3D3D;
+  --color-grey700: #1E1E1E;
+  --color-black: #000000;
+
+  /* Theme colors */
+  --color-divider: var(--color-grey200);
+  --color-title: var(--color-black);
+  --color-text: var(--color-grey500);
+  --color-background: var(--color-white);
+  --color-container: var(--color-grey100);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+html {
+  font-weight: 500;
+  font-size: 18px;
+  background-color: var(--color-background);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  outline: none;
+  border: 1px solid var(--color-text2);
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: var(--default-border-radius);
+}
+
+input::placeholder {
+  color: var(--color-text2);
+  font-size: 1rem;
+}
+
+input:focus {
+  border: 1px solid var(--color-text1);
+}
+
+
+@media only screen and (min-width: 1920px) {
+  :root {
+    --max-width-content: 1920px;
+    --padding-content: 128px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  :root {
+    --max-width-content: 1200px;
+    --padding-content: 24px;
+  }
+}

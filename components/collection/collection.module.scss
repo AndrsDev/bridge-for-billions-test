@@ -1,0 +1,18 @@
+.mainContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-background2);
+  padding: 64px 48px;
+  min-width: 320px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.spacing {
+  margin-bottom: 24px;
+}

@@ -1,4 +1,9 @@
+## Project Description
+- Definition: https://docs.google.com/document/d/1u5C5kqbai1gLPwlAI3lK3qXhZXpBBvSyolO263bahV4/edit
+- Discogs API: https://www.discogs.com/developers/#page:home,header:home-quickstart
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 

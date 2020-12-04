@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+.mainContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-background1);
+  padding: 64px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.gridView {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
+  column-gap: 64px;
+  row-gap: 48px;
+  justify-content: center;
+
+  input {
+    // top: 0;
+    // position: sticky;
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+  }
+}
+
