@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const response = await fetch(`https://api.discogs.com/database/search?q=${query}&key=${DISCOGS_CONSUMER_KEY}&secret=${DISCOGS_CONSUMER_SECRET}&page=${page}&per_page=${size}`);
     const data = await response.json();
     res.statusCode = 200
-    res.json(data.results);
+    res.json({ results: data.results});
   } catch (e){
     res.statusCode = 400
     res.json(null)
