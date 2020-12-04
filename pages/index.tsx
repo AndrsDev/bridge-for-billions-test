@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   const fetchItems = async (query: string) => {
-    const response = await fetch(`http://localhost:3000/api/search?query=${query}&page=${page}&size=12`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/search?query=${query}&page=${page}&size=12`);
     const data = await response.json();
     setResults(results.concat(data.results));
     setPage(page + 1);
