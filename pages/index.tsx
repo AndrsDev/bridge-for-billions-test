@@ -17,7 +17,6 @@ export default function Home() {
 
   const closeModal = () => {
     setSelectedRelease(null);
-    console.log('wtf')
   }
 
   const fetchItems = async (query: string) => {
