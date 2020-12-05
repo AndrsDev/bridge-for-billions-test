@@ -1,4 +1,5 @@
 import Divider from 'components/divider/divider';
+import FavButton from 'components/fav-button/fav-button';
 import Modal from 'components/modal/modal';
 import { CollectionContext } from 'contexts/collectionContext';
 import { Release } from 'models/release.model';
@@ -19,16 +20,20 @@ function ReleaseDetailsModal({ release, onClose } : Props) {
     <Modal onClose={onClose} >
       <img className={styles.img} src={release.cover_image}/>
       <div className={styles.content}>
+
         <div className={styles.modalHeader}>
-          <div>
+          <div className={styles.headerTitle}>
             <h2>{release.title}</h2>
             <p>{release.type}</p>
           </div>
-          <button onClick={() => toggleItem(release)}>
-            <p>{items.includes(release) ? "I" : "N"}</p>
-          </button>
+          <FavButton 
+            onClick={() => toggleItem(release)} 
+            isFavorite={items.includes(release)}
+          />
         </div>
+
         <Divider />
+
         <div className={styles.detailRow}>
           <p><strong>Status</strong></p>
           <p>{release.status ?? "---"}</p>

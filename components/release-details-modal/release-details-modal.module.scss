@@ -22,11 +22,11 @@
   h2 {
     margin: 0;
   }
+}
 
-  :first-child{
-    flex: 1;
-    margin-right: 24px;
-  }
+.headerTitle {
+  flex: 1;
+  margin-right: 24px;
 }
 
 .detailRow {
