@@ -13,10 +13,10 @@ export default function SavedReleaseRow( { release } : Props) {
   return (
     <div className={styles.rowContainer}>
 
-      <img alt={release.title} src="https://img.discogs.com/oTaCoY-RnF3kUTwQM1wSooqB5xk=/700x700/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16191359-1605179753-6676.jpeg.jpg"/>
+      <img alt={release.title} src={release.cover_image}/>
       <div className={styles.details}>
         <p className={styles.title}>{release.title}</p>      
-        <p className={styles.caption}>{release.artist}</p>  
+        <p className={styles.caption}>{release.type}</p>  
       </div>
       <div>♥️</div>
     </div>
