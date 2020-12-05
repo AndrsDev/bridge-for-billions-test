@@ -1,6 +1,9 @@
 import Divider from 'components/divider/divider';
+import FavButton from 'components/fav-button/fav-button';
 import Modal from 'components/modal/modal';
+import { CollectionContext } from 'contexts/collectionContext';
 import { Release } from 'models/release.model';
+import { useContext } from 'react';
 import styles from './release-details-modal.module.scss';
 
 interface Props {
@@ -9,18 +12,28 @@ interface Props {
 }
 
 function ReleaseDetailsModal({ release, onClose } : Props) {
+
+  const { items, toggleItem } = useContext(CollectionContext);
+
+  
   return (
     <Modal onClose={onClose} >
       <img className={styles.img} src={release.cover_image}/>
       <div className={styles.content}>
+
         <div className={styles.modalHeader}>
-          <div>
+          <div className={styles.headerTitle}>
             <h2>{release.title}</h2>
             <p>{release.type}</p>
           </div>
-          <p>♥️</p>
+          <FavButton 
+            onClick={() => toggleItem(release)} 
+            isFavorite={items.includes(release)}
+          />
         </div>
+
         <Divider />
+
         <div className={styles.detailRow}>
           <p><strong>Status</strong></p>
           <p>{release.status ?? "---"}</p>

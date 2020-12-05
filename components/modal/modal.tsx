@@ -8,22 +8,13 @@ interface Props {
 }
 
 function Modal({ onClose, children } : Props) {
-  const [ element, setElement ] = useState(null)
-
-  useEffect(() => {
-    const container = ReactDOM.createPortal(
-      <div className={`${styles.modalBackground}`} onClick={onClose} >
-        <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
-          {children}
-        </div>
-      </div>,
-      document.getElementById('modal')!
-    );
-
-    setElement(container);
-  }, [])
-
-  return element;
+  return (
+    <div className={`${styles.modalBackground}`} onClick={onClose} >
+      <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
 }
 
 export default Modal;
